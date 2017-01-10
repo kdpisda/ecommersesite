@@ -15,7 +15,7 @@
   <center>
       <div style="max-width:500px; text-align:left;">
         <div class="panel-body">
-            <form method="post" action="session_script.php">
+            <form method="post" action="setting_script.php">
                 <h3><strong>Change Password</strong></h3>
                 <?php if(isset($_SESSION['msg'])){
                 ?>
@@ -23,19 +23,19 @@
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <strong>Warning!</strong><?php echo $_SESSION['msg']; ?>
+                    <strong>Warning! </strong><?php echo $_SESSION['msg']; ?>
                 </div>
-                <?php } ?>
+                <?php session_unset($_SESSION['msg']); } ?>
                 <div class="form-group">
-                    <input type="email" class="form-control" name="old_pass" placeholder="Old Password">
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" name="new_pass" placeholder="New Password">
+                    <input type="password" class="form-control" name="old_pass" placeholder="Old Password">
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control" name="new_pass_rep" placeholder="Re-type New Password">
+                    <input type="password" class="form-control" name="new_pass" placeholder="New Password">
                 </div>
-                <button type="submit" class="btn btn-primary">Change</button>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="new_pass_rep" placeholder="Re-type New Password">
+                </div>
+                <button type="submit" class="btn btn-primary" name="submit">Change</button>
             </form>
         </div>
       </div>

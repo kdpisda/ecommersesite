@@ -25,9 +25,9 @@
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <strong>Warning!</strong><?php echo $_SESSION['msg']; ?>
+                    <strong><?php echo $_SESSION['msg']; ?></strong>
                 </div>
-                <?php } else {?>
+                <?php session_destroy(); } else {?>
                 <div class="panel-warning" style="margin-bottom:10px;">
                     Login to make a purchase
                 </div>
@@ -35,7 +35,7 @@
                 <div class="input-group">
                     <input type="email" class="form-control" placeholder="Email" aria-describedby="sizing-addon1" style="margin-bottom:10px;" name="email" required>
                     <input type="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon1" style="margin-bottom:10px;" name="password" required>
-                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="submit" class="btn btn-primary" name="submit">Login</button>
                 </div>
             </form>
         </div>
