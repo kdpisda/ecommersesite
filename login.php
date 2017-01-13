@@ -29,7 +29,7 @@
                 </div>
                 <?php session_destroy(); } else {?>
                 <div class="panel-warning" style="margin-bottom:10px;">
-                    Login to make a purchase
+                    <i>Login to make a purchase</i>
                 </div>
                 <?php } ?>
                 <div class="input-group">

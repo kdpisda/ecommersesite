@@ -10,12 +10,13 @@
             PDO::ERRMODE_EXCEPTION => true
             ));
             
-            $stmt = $dbh->prepare("SELECT password FROM users WHERE email = ?");
+            $stmt = $dbh->prepare("SELECT * FROM users WHERE email = ?");
             if ($stmt->execute(array($user_email))) {
                 while ($data = $stmt->fetch()) {
                     if($data['password']){
                         if(!strcmp($data['password'], $password)){
                             $_SESSION['email'] = $user_email;
+                            $_SESSION['id'] = $data['id'];
                             header("Location: products.php");
                         } else {
                             $_SESSION['msg'] = 'Wrong Password';

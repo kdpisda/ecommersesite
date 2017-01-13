@@ -32,10 +32,6 @@
             $stmt->execute();
             $stmt = null; // doing this is mandatory for connection to get closed
             $dbh = null;
-            /* foreach($dbh->query('SELECT * from FOO') as $row) {
-                print_r($row);
-            } */
-            $dbh = null;
             $_SESSION['msg'] = 'User created succefully';
             header("Location: login.php");
         } catch (PDOException $e) {
@@ -44,5 +40,5 @@
         }
         
     }
-    else echo 'Not submited';
+    else header("Location: index.php");
 ?>
